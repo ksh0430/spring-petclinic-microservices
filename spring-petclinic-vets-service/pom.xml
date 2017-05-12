@@ -44,6 +44,7 @@
 		</dependency>
 
         <!-- Spring Cloud-->
+        <!--
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-sleuth-zipkin</artifactId>
@@ -60,6 +61,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
+        -->
 
         <!-- Third parties-->
 		<dependency>
