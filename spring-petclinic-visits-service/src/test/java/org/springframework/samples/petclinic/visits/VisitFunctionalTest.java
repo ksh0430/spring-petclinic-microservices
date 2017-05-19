@@ -7,6 +7,10 @@ import org.junit.Test;
 
 import com.jayway.restassured.RestAssured;
 
+/**
+ * @author msoh
+ */
+
 public class VisitFunctionalTest {
 	
 

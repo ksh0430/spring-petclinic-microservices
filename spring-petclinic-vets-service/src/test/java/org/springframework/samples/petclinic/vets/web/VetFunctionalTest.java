@@ -7,6 +7,10 @@ import com.jayway.restassured.RestAssured;
 
 import static com.jayway.restassured.RestAssured.given;
 
+/**
+ * @author msoh
+ */
+
 public class VetFunctionalTest {
 	
     @BeforeClass
