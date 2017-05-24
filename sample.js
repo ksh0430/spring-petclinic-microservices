@@ -1,6 +1,6 @@
 var webdriver = require('selenium-webdriver');
-var username = "hyunjugraceeyang",
-	accessKey = "9960613a-f763-4202-bdf1-9772abf119ec";
+var username = process.env.SAUCE_USERNAME,
+	accessKey = process.env.SAUCE_ACCESS_KEY;
 // var driver = new webdriver.Builder()
 // 				.withCapabilities(webdriver.Capabilities.chrome())
 // 				.build();
