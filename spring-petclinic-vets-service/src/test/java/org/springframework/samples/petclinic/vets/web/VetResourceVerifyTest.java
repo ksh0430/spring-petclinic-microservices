@@ -1,6 +1,8 @@
 
 package org.springframework.samples.petclinic.vets.web;
 
+import static java.util.Arrays.asList;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 
@@ -16,25 +18,33 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @author msoh
+ ** @author msoh
  */
 @RunWith(SpringRunner.class)
 @WebMvcTest(VetResource.class)
 @ActiveProfiles("test")
-public class VetResourceTypeTest {
+public class VetResourceVerifyTest {
 
     @MockBean
     private VetRepository vetRepository;
 
-    @Test
-    public void shouldGetAListOfVetsInJSonFormat() throws Exception {
-    	List<Vet> vList = vetRepository.findAll();
-    	assertEquals(String.class, vList.get(0).getFirstName().getClass());
+    @Test(expected = NullPointerException.class)
+    public void checkVetWithNonValidId() throws Exception {
+    	Vet vet = vetRepository.findOne(100);
+    	vet.getFirstName();
     }
     
-    @Test(expected = IllegalArgumentException.class)
-    public void shouldSaveStringForNameFormat(){
-    	
+    
+    @Test(expected = java.lang.IndexOutOfBoundsException.class)
+    public void testEmptyList() {
+        Vet vet = vetRepository.findOne(3000);
+        asList(vet).get(1);
+    }
+    
+    @Test
+    public void shouldGetAVet() throws Exception {
+      Vet vet = vetRepository.findOne(3000);
+      assertThat(vetRepository.findAll()).doesNotContain(vet);
     }
     
 }
