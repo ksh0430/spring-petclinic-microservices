@@ -16,11 +16,11 @@
 
 	<dependencies>
         <!-- Petclinic -->
-        <!--
+		<!--         
         <dependency>
             <groupId>org.springframework.samples.petclinic.monitoring</groupId>
             <artifactId>spring-petclinic-monitoring</artifactId>
-        </dependency>
+        </dependency> 
         -->
 
         <!-- Spring Boot -->
