@@ -3,15 +3,11 @@ package org.springframework.samples.petclinic.vets.web;
 
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
-
-
-import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.samples.petclinic.vets.model.Vet;
 import org.springframework.samples.petclinic.vets.model.VetRepository;
 import org.springframework.test.context.ActiveProfiles;
@@ -21,11 +17,11 @@ import org.springframework.test.context.junit4.SpringRunner;
  ** @author msoh
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(VetResource.class)
+@DataJpaTest
 @ActiveProfiles("test")
 public class VetResourceVerifyTest {
 
-    @MockBean
+	@Autowired
     private VetRepository vetRepository;
 
     @Test(expected = NullPointerException.class)
