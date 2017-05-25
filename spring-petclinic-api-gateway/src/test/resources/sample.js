@@ -23,10 +23,11 @@ console.log('hello')
 console.log(process.env.SAUCE_USERNAME)
 console.log(process.env.SAUCE_APIKEY)
 
+var URL = process.env.APP_URL;
 
 //Scenario
 //1. Connect to front page: http://api-gateway-sp.mybluemix.net/
-driver.get("http://api-gateway-sp.mybluemix.net/#!/welcome");
+driver.get(URL);
 driver.sleep(1000);
 
 // 2. Information display test
