@@ -22,6 +22,8 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 /**
  * @author Maciej Szarlinski
@@ -29,7 +31,12 @@ import org.springframework.web.client.RestTemplate;
 @EnableZuulProxy
 @EnableDiscoveryClient
 @SpringBootApplication
-public class ApiGatewayApplication {
+public class ApiGatewayApplication extends SpringBootServletInitializer {
+	
+	@Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(ApiGatewayApplication.class);
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(ApiGatewayApplication.class, args);
