@@ -31,7 +31,7 @@ public class CustomersServiceApplication extends SpringBootServletInitializer {
 	
 	@Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(ApiGatewayApplication.class);
+        return application.sources(CustomersServiceApplication.class);
     }
 
 	public static void main(String[] args) {
