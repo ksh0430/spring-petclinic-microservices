@@ -5,7 +5,7 @@
 
 	<groupId>org.springframework.samples.petclinic.vets</groupId>
 	<artifactId>spring-petclinic-vets-service</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<description>Spring PetClinic Vets Service</description>
 
 	<parent>
@@ -42,6 +42,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
+          <scope>provided</scope>
+        </dependency>
 
         <!-- Spring Cloud-->
         <dependency>

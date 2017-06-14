@@ -5,7 +5,7 @@
 
     <groupId>org.springframework.samples.petclinic.api</groupId>
     <artifactId>spring-petclinic-api-gateway</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <description>Spring PetClinic API Gateway</description>
 
     <parent>
@@ -48,6 +48,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
+          <scope>provided</scope>
         </dependency>
 
         <!-- Spring Cloud -->

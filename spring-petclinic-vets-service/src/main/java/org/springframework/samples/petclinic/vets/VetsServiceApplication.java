@@ -20,6 +20,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.samples.petclinic.vets.system.VetsProperties;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 /**
  * @author Maciej Szarlinski
@@ -27,7 +29,12 @@ import org.springframework.samples.petclinic.vets.system.VetsProperties;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableConfigurationProperties(VetsProperties.class)
-public class VetsServiceApplication {
+public class VetsServiceApplication extends SpringBootServletInitializer {
+	
+	@Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(VetsServiceApplication.class);
+    }
 
 	public static void main(String[] args) {
 		SpringApplication.run(VetsServiceApplication.class, args);

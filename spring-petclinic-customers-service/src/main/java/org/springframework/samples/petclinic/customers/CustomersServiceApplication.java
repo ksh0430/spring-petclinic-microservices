@@ -19,13 +19,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 /**
  * @author Maciej Szarlinski
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-public class CustomersServiceApplication {
+public class CustomersServiceApplication extends SpringBootServletInitializer {
+	
+	@Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(CustomersServiceApplication.class);
+    }
 
 	public static void main(String[] args) {
 		SpringApplication.run(CustomersServiceApplication.class, args);
